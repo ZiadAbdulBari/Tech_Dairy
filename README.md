@@ -1,2 +1,2 @@
-# Tech_Dairy
+# Tech_Diary
 ## This project is under development
