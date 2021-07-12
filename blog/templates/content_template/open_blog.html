@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_block %}{{read_blog.title}}{% endblock %}
+
+{% block content_block %}
+<h1>{{read_blog.title}}</h1>
+<hr>
+<p>{{full_blog|linebreaks}}</p>
+{% endblock %}

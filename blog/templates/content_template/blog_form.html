@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title_block %}Post Blog{% endblock %}
+
+{% block content_block %}
+<p>{{ckeck}}</p>
+
+<form method="POST" enctype="multipart/form-data">
+    {{form | crispy}}
+    {% csrf_token %}
+    <div class="mt-4 text-center ">
+        <input type="submit" value="Upload" class="btn btn-primary button_color">
+    </div>
+</form>
+
+<!-- <script>
+    CKEDITOR.replace( 'blog_content' );
+</script> -->
+
+{% endblock %}

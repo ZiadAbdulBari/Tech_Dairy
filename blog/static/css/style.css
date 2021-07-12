@@ -1,0 +1,39 @@
+.navbar_bg_color{
+    background: rgb(192, 0, 58);
+}
+.text_aign{
+    text-align: justify;
+}
+svg{
+    color: rgb(192, 0, 58);
+}
+/* button{
+    background-color: rgb(192, 0, 58);
+} */
+.button_color{
+    background-color: rgb(192, 0, 58);
+    border-color: rgb(192, 0, 58);
+    
+}
+
+.button_color:hover {
+    background-color: rgb(192, 0, 58);
+    border-color: rgb(192, 0, 58);
+}
+.card_height{
+    height: 657px;
+    width: 416px;
+}
+.text_color,.text_color:hover{
+    color: rgb(192, 0, 58);
+}
+
+/* .card_parent{
+    position: relative;
+}
+.middle_align{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(50%);
+} */

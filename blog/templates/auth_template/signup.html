@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title_block %}Blog | Signup {% endblock %}
+
+{% block content_block %}
+
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="card mx-auto" style="width: 30rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Sign up</h5>
+                <hr>
+                <form method="POST">
+
+                    {{form|crispy}}
+                    {% csrf_token %}
+                    <div class="mt-4 mb-3 text-center">
+                        <input type="submit" value="Sign Up" class="btn btn-primary button_color">
+                    </div>
+                </form>
+                <p class="mb-0"> If you have already an account, please <a href="#" class="text_color">login</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
