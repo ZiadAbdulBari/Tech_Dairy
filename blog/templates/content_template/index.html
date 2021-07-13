@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load hitcount_tags %}
 {% load static %}
 
 {% block title_block %}Blog List{% endblock %}
@@ -11,24 +12,24 @@
         <div class="card card_height mb-4">
             <img src="/media/{{blog.blog_image}}" class="card-img-top" alt="..." height="276px" width="414px">
             <div class="card-body">
-                <h5 class="card-title">{{blog.title}}</h5>
+                <div class="title_div">
+                    <h5 class="card-title">{{blog.title}}</h5>
+                </div>
                 <hr>
-                <h6><i class="fas fa-pen-nib"></i> Writer: {{blog.author.first_name}} {{blog.author.last_name}}</h6>
-                <div class="overflow-hidden" style="height: 168px;">
+                <div class="overflow-hidden" style=" max-height: 168px;">
+                    <h6><i class="fas fa-pen-nib"></i> Writer: {{blog.author.first_name}} {{blog.author.last_name}}</h6>
                     <p class="card-text text_aign">{{blog.short_description}}</p>
                 </div>
                 <hr/>
-                <div class="d-flex justify-content-between">
-                    <div class="read-btn">
-                        <a href="{% url 'content:blog_open' slug=blog.slug %}" class="btn btn-primary button_color">Read</a>
-                    </div>
-                    <div class="publish_date">
-                        <p class="mb-0 mt-2"><i class="fas fa-calendar-alt"></i> {{blog.published_at}}</p>
-                    </div>
-                </div>    
+                <div class="">
+                    <a href="{% url 'content:blog_open' slug=blog.slug %}" class="btn btn-primary button_color float-start">Read</a>
+                    <p class="mb-0 float-end"><i class="fas fa-calendar-alt"></i> {{blog.published_at}}</p>
+                </div>
+                <p class="mb-0"><i class="fas fa-eye"></i>{% get_hit_count for blog%}</p>
             </div>
         </div>
     </div>
-   {% endfor %} 
+    {% endfor %} 
 </div>
+
 {% endblock %}

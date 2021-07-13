@@ -5,6 +5,8 @@ from content import forms
 import content;
 from content.models import BlogWrite
 import uuid
+from hitcount.models import HitCount
+from hitcount.views import HitCountMixin
 
 def blog_list(request):
     blogs = BlogWrite.objects.all()
@@ -17,6 +19,9 @@ def my_blog(request):
 
 def blogRead(request,slug):
     read_blog = BlogWrite.objects.get(slug=slug)
+    hit_count = HitCount.objects.get_for_object(read_blog)
+    hit_count_response = HitCountMixin.hit_count(request, hit_count)
+    
 
     file_name = read_blog.title+"."+"doc"
     open_from = "media\\document\\"+file_name
