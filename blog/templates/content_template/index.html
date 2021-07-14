@@ -21,11 +21,11 @@
                     <p class="card-text text_aign">{{blog.short_description}}</p>
                 </div>
                 <hr/>
-                <div class="">
-                    <a href="{% url 'content:blog_open' slug=blog.slug %}" class="btn btn-primary button_color float-start">Read</a>
-                    <p class="mb-0 float-end"><i class="fas fa-calendar-alt"></i> {{blog.published_at}}</p>
+                <a href="{% url 'content:blog_open' slug=blog.slug %}" class="btn btn-primary button_color float-start">Read</a>
+                <div class="float-end">
+                    <p class="mb-0"><i class="fas fa-calendar-alt"></i> {{blog.published_at}}</p>
+                    <p class="mb-0 mt-1 float-end"><i class="fas fa-eye"></i> {% get_hit_count for blog%}</p>
                 </div>
-                <p class="mb-0"><i class="fas fa-eye"></i>{% get_hit_count for blog%}</p>
             </div>
         </div>
     </div>

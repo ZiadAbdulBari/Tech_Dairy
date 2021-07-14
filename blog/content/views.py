@@ -12,7 +12,6 @@ def blog_list(request):
     blogs = BlogWrite.objects.all()
     return render(request, 'content_template/index.html', context={'blogs':blogs})
 
-
 def my_blog(request):
     return render(request, 'content_template/my_blog.html', context={})
 
